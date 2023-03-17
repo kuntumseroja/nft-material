@@ -385,7 +385,7 @@ const Form = () => {
             </ErrorBoundary>
 
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Typography
               variant={'subtitle2'}
               sx={{ marginBottom: 2 }}
@@ -409,7 +409,7 @@ const Form = () => {
                 formik.touched.description && formik.errors.description
               }
             />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} sm={6}>
             <Typography
