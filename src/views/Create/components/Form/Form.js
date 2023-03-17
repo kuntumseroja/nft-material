@@ -23,6 +23,8 @@ import { create } from 'ipfs-http-client';
 import Material from 'contracts/Material.sol/Material.json';
 import Papa from "papaparse";
 
+import ErrorBoundary from 'components/ErrorBoundary';
+
 const validationSchema = yup.object({
   name: yup
     .string()
@@ -272,6 +274,8 @@ const Form = () => {
 
   return (
     <Box>
+      <ErrorBoundary>
+
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
@@ -334,6 +338,7 @@ const Form = () => {
               </Collapse>
             </Box>
           </Grid>
+          <ErrorBoundary>
           <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -353,7 +358,10 @@ const Form = () => {
               helperText={formik.touched.name && formik.errors.name}
             />
           </Grid>
+          </ErrorBoundary>
           <Grid item xs={12}>
+          <ErrorBoundary>
+
             <table>
               <thead>
                 <tr bgcolor="grey">
@@ -374,6 +382,8 @@ const Form = () => {
                 })}
               </tbody>
             </table>
+            </ErrorBoundary>
+
           </Grid>
           <Grid item xs={12}>
             <Typography
@@ -625,6 +635,8 @@ const Form = () => {
           </Grid>
         </Grid>
       </form>
+      </ErrorBoundary>
+
       <DialogBox
         open={dialogBoxOpen}
         onClose={() => setDialogBoxOpen(false)}

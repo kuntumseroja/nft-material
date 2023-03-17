@@ -328,7 +328,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
       {/* //new */}
       {data.map((item, i) => (
         <Dialog key={i} open={open[i]} onClose={() => handleOpenDialog(i, false)} fullWidth maxWidth="md">
-          <DialogTitle>DataSheet {item.name}-{item.address}</DialogTitle>
+          <DialogTitle>NFT DataSheet {item.name}-{item.address}</DialogTitle>
           <DialogContent>
             <CsvViewer fileUrl={item.address} />
           </DialogContent>
